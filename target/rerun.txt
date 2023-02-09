@@ -1,0 +1,5 @@
+file:src/main/resources/features/F04_Search.feature:14
+file:src/main/resources/features/F07_followUs.feature:9
+file:src/main/resources/features/F08_Wishlist.feature:4
+file:src/main/resources/features/F06_homeSliders.feature:5:10
+file:src/main/resources/features/F01_Registeration.feature:6
