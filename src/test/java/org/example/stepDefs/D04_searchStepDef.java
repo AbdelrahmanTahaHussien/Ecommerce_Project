@@ -31,17 +31,21 @@ public class D04_searchStepDef {
 
     @Then("displayed objects contains the search word {string}")
     public void displayedObjectsContainsTheSearchWord(String txt) {
-
+        SoftAssert softAssert = new SoftAssert();
         for (int i = 0 ; i < search.searchItemlist.size() ; i++) {
 
-            Assert.assertTrue(search.searchItemlist.get(i).getText().toLowerCase(Locale.ROOT).contains(txt));
+            softAssert.assertTrue(search.searchItemlist.get(i).getText().toLowerCase(Locale.ROOT).contains(txt));
 
         }
+           softAssert.assertAll();
     }
 
 
     @Then("displayed objects contains the sku word {string}")
     public void displayedObjectsContainsTheSkuWord(String sku) {
-        Assert.assertTrue(search.sku.getText().toUpperCase(Locale.ROOT).contains(sku));
+
+        SoftAssert softAssert = new SoftAssert();
+
+        softAssert.assertTrue(search.sku.getText().toUpperCase(Locale.ROOT).contains(sku));
     }
 }

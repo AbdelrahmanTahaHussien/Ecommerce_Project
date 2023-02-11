@@ -4,13 +4,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.pages.P03_homepage;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import java.util.Set;
 
 public class D07_followUsStepDef {
 
     P03_homepage follow = new P03_homepage();
-
+    SoftAssert softAssert = new SoftAssert();
     String mainurl;
     String childurl;
 
@@ -28,7 +29,7 @@ public class D07_followUsStepDef {
 
     @Then("Url navigate to facebook {string}")
     public void urlNavigateToFacebook(String facebookurl) {
-        Assert.assertEquals(childurl,facebookurl);
+        softAssert.assertEquals(childurl,facebookurl);
     }
 
     @When("user click on the twitter button")
@@ -43,7 +44,7 @@ public class D07_followUsStepDef {
 
         @Then("Url navigate to twitter {string}")
         public void urlNavigateToTwitter (String twitterUrl){
-            Assert.assertEquals(childurl, twitterUrl);
+            softAssert.assertEquals(childurl, twitterUrl);
         }
 
         @When("user click on the rss button")
@@ -59,7 +60,7 @@ public class D07_followUsStepDef {
 
         @Then("Url navigate to rss link {string}")
         public void urlNavigateToRssLink (String rssurl){
-            Assert.assertEquals(childurl, rssurl);
+            softAssert.assertEquals(childurl, rssurl);
         }
 
         @When("user click on the youtube button")
@@ -75,6 +76,9 @@ public class D07_followUsStepDef {
 
         @Then("Url navigate to the youtube link {string}")
         public void urlNavigateToTheYoutubeLink (String youtubeurl){
-            Assert.assertEquals(childurl, youtubeurl);
+            softAssert.assertEquals(childurl, youtubeurl);
+
+            softAssert.assertAll();
         }
-    }
+
+        }

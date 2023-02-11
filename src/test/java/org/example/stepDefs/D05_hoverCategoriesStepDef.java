@@ -55,6 +55,6 @@ public class D05_hoverCategoriesStepDef {
 
         soft.assertEquals(main.pgtitle.getText(),type);
 
-
+        soft.assertAll();
     }
 }

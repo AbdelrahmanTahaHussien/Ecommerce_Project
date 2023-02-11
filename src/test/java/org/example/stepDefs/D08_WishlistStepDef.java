@@ -15,6 +15,7 @@ import java.awt.*;
 import java.time.Duration;
 
 public class D08_WishlistStepDef {
+    SoftAssert softAssert =new SoftAssert();
 
     P03_homepage wishlist = new P03_homepage();
 
@@ -29,10 +30,8 @@ public class D08_WishlistStepDef {
 
         wishlist.successnot.isDisplayed();
         String  color = wishlist.successnot.getCssValue("color");
-        SoftAssert softAssert =new SoftAssert();
         softAssert.assertEquals(Color.fromString(color).asHex(),"#4bb07a");
 
-        softAssert.assertAll();
     }
 
 
@@ -51,6 +50,8 @@ public class D08_WishlistStepDef {
     public void checkThatQtyIsMoreThan() {
       int c = Integer.parseInt(wishlist.qty.getAttribute("value"));
 
-       Assert.assertTrue(c>0);
+       softAssert.assertTrue(c>0);
+        softAssert.assertAll();
+
     }
 }

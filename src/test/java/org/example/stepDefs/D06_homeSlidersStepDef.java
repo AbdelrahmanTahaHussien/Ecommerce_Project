@@ -11,7 +11,7 @@ import org.testng.asserts.SoftAssert;
 import static org.example.stepDefs.Hooks.driver;
 
 public class D06_homeSlidersStepDef {
-
+        SoftAssert softAssert = new SoftAssert();
     P03_homepage slider = new P03_homepage();
 
     @When("user click the iphone slider")
@@ -26,7 +26,8 @@ public class D06_homeSlidersStepDef {
     public void urlNavigateToTheIphoneSliderProduct() {
         String url = Hooks.driver.getCurrentUrl();
 
-        Assert.assertEquals(url,"https://demo.nopcommerce.com/iphone-6");
+        softAssert.assertEquals(url,"https://demo.nopcommerce.com/iphone-6");
+
     }
 
     @When("user click the nokia slider")
@@ -43,6 +44,8 @@ public class D06_homeSlidersStepDef {
 
         String url = Hooks.driver.getCurrentUrl();
 
-        Assert.assertEquals(url,"https://demo.nopcommerce.com/nokia-lumia-1020");
+        softAssert.assertEquals(url,"https://demo.nopcommerce.com/nokia-lumia-1020");
+        softAssert.assertAll();
     }
+
 }

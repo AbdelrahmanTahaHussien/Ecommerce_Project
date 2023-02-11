@@ -29,5 +29,6 @@ public class D03_currenciesStepDef {
            Assert.assertTrue(euro.webElementList.get(i).getText().contains("€"));
         }
 
+
     }
 }
